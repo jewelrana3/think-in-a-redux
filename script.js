@@ -12,17 +12,17 @@ const INCREMENT = "increment";
 const DECREMENT = "decrement";
 
 // crete action
-function increment() {
+function increment(value) {
   return {
     type: INCREMENT,
-    payload: 4,
+    payload: value,
   };
 }
 
-function decrement() {
+function decrement(value) {
   return {
     type: DECREMENT,
-    payload: 3,
+    payload: value,
   };
 }
 
@@ -58,10 +58,10 @@ store.subscribe(render);
 
 // crete button
 incrementEL.addEventListener("click", () => {
-  store.dispatch(increment());
+  store.dispatch(increment(7));
 });
 
 decrementEl.addEventListener("click", () => {
-  store.dispatch(decrement());
+  store.dispatch(decrement(6));
   console.log(store);
 });
