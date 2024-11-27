@@ -1,24 +1,42 @@
 // element id
-const increment = document.getElementById("increment");
-const decrement = document.getElementById("decrement");
+const incrementEL = document.getElementById("increment");
+const decrementEl = document.getElementById("decrement");
 const counter = document.getElementById("counter");
 // crearte initial state
 const initialState = {
   counter: 0,
 };
 
-console.log("kkk");
+//  action identifier
+const INCREMENT = "increment";
+const DECREMENT = "decrement";
+
+// crete action
+function increment() {
+  return {
+    type: INCREMENT,
+    payload: 4,
+  };
+}
+
+function decrement() {
+  return {
+    type: DECREMENT,
+    payload: 3,
+  };
+}
+
 // reducer function create
 const counterReducer = (state = initialState, action) => {
-  if (action.type === "increment") {
+  if (action.type === INCREMENT) {
     return {
       ...state,
-      counter: state.counter + 1,
+      counter: state.counter + action.payload,
     };
-  } else if (action.type === "decrement") {
+  } else if (action.type === DECREMENT) {
     return {
       ...state,
-      counter: state.counter - 1,
+      counter: state.counter - action.payload,
     };
   } else {
     return state;
@@ -39,10 +57,11 @@ store.subscribe(render);
 // counter.innerHTML = store.getState().counter;
 
 // crete button
-increment.addEventListener("click", () => {
-  store.dispatch({ type: "increment" });
+incrementEL.addEventListener("click", () => {
+  store.dispatch(increment());
 });
 
-decrement.addEventListener("click", () => {
-  store.dispatch({ type: "decrement" });
+decrementEl.addEventListener("click", () => {
+  store.dispatch(decrement());
+  console.log(store);
 });
