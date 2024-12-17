@@ -9,13 +9,13 @@ const counterReducer = (state = initialState, action) => {
     case INCREMENET:
       return {
         ...state,
-        value: state.value + value,
+        value: state.value + 1,
       };
 
     case DECREMENT:
       return {
         ...state,
-        value: state.value - value,
+        value: state.value - 1,
       };
 
     default:
