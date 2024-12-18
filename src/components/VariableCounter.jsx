@@ -1,12 +1,9 @@
 import { connect } from "react-redux";
-import { increment } from "../redux/counter/actions";
+import { decrement, increment } from "../redux/counter/actions";
 import {
   decrement as dynamicDecrement,
   increment as dynamicIncrement,
 } from "../redux/dynamiCounter/Actions";
-// decrement as dynamicDecrement,
-// increment as dynamicIncrement,
-// redux/dynamiCounter/actions
 
 const VariableCounter = ({ count, increment, decrement }) => {
   return (
