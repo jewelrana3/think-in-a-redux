@@ -6,10 +6,12 @@ export const statusChange = (status) => {
     payload: status,
   };
 };
-export const colorChange = (colorId) => {
+export const colorChange = (color, changeType) => {
   return {
     type: COLORCHANGED,
-    payload: colorId,
+    payload: {
+      color,
+      changeType,
+    },
   };
 };
- 
