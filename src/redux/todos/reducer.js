@@ -11,17 +11,21 @@ import {
 import initialState from "./intialState";
 
 const nextId = (todos) => {
-  const maxId = todos.reduce(maxId, (todo) => Math.max(maxId, todo.id), -1);
+  const maxId = todos.reduce((maxId,todo)=> Math.max(todo.id,maxId),-1)
   return maxId + 1;
 };
 
 const todosReducer = (state = initialState, action) => {
+  console.log(action);
+  
   switch (action.type) {
     case ADDED:
       return [
         ...state,
         {
           id: nextId(state),
+          title:action.payload,
+          complete:false
         },
       ];
 
@@ -55,12 +59,12 @@ const todosReducer = (state = initialState, action) => {
       return state.map((todo) => {
         return {
           ...todo,
-          complete: todo.true,
+          complete: true,
         };
       });
 
     case CLEARCOMPLETED:
-      return state.map((todo) => !todo.complete);
+      return state.filter((todo) => !todo.complete);
 
     default:
       return state;

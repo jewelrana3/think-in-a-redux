@@ -2,7 +2,7 @@ const initialState = [
   {
     id: 1,
     title: "Learn with Redux",
-    complete: false,
+    complete: true,
   },
   {
     id: 2,
