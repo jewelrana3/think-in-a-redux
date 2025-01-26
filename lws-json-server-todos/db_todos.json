@@ -49,6 +49,16 @@
       "text": "hdjhdjhdjsdh",
       "completed": false,
       "id": 9
+    },
+    {
+      "text": "sdfsdf",
+      "complete": false,
+      "id": 10
+    },
+    {
+      "text": "learn redux",
+      "complete": false,
+      "id": 11
     }
   ]
 }
