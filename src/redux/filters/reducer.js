@@ -1,39 +1,39 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-case-declarations */
 import { COLORCHANGED, STATUSCHANGED } from "./actionTypes";
-import intialState from "./intialState";
+import initialState from "./initialState";
 
-const filterReducer = (state = intialState, action) => {
-  switch (action.type) {
-    case STATUSCHANGED:
-      return {
-        ...state,
-        status: action.payload,
-      };
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
+        case STATUSCHANGED:
+            return {
+                ...state,
+                status: action.payload,
+            };
 
-    case COLORCHANGED:
-      const { color, changeType } = action.payload;
-      switch (changeType) {
-        case "add":
-          return {
-            ...state,
-            colors: [...state.colors, color],
-          };
+        case COLORCHANGED:
+            const { color, changeType } = action.payload;
 
-        case "remove":
-          return {
-            ...state,
-            colors: state.colors.filter((existingColor) => {
-              return existingColor !== color;
-            }),
-          };
+            switch (changeType) {
+                case "added":
+                    return {
+                        ...state,
+                        colors: [...state.colors, color],
+                    };
+
+                case "removed":
+                    return {
+                        ...state,
+                        colors: state.colors.filter(
+                            (existingColor) => existingColor !== color
+                        ),
+                    };
+
+                default:
+                    return state;
+            }
 
         default:
-          return state;
-      }
-    default:
-      return state;
-  }
+            return state;
+    }
 };
 
-export default filterReducer;
+export default reducer;
