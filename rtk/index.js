@@ -5,11 +5,11 @@ const {
   dynamicCounterSlice,
 } = require("./features/dynamicCounter/dynamicCounterSlice");
 
-console.log(`counter : ${JSON.stringify(store.getState())}`);
+// console.log(`counter : ${JSON.stringify(store.getState())}`);
 
 // subscribe
 store.subscribe(() => {
-  console.log(store.getState());
+  // console.log(store.getState());
 });
 
 // dispatch
