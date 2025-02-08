@@ -19,7 +19,3 @@ const counterSlice = createSlice({
 });
 // module.exports = counterSlice.reducer;
 // module.exports.counterActions = counterSlice.actions;
-module.exports = {
-  counterReducer: counterSlice.reducer,
-  counterActions: counterSlice.actions,
-};
