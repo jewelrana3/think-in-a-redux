@@ -1,7 +1,6 @@
-import axios from "axios";
 import videosInstance from "../../utilis/axios";
 
 export const getFetch = async () => {
-  const responsive = await axios.get(videosInstance());
+  const responsive = await videosInstance.get("/videos");
   return responsive.data;
 };
