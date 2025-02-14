@@ -1,6 +1,6 @@
-import videosInstance from "../../utilis/axios";
+import dataInstance from "../../utilis/axios";
 
-export const getFetch = async () => {
-  const responsive = await videosInstance.get("/videos");
+export const getVideos = async () => {
+  const responsive = await dataInstance.get("/videos");
   return responsive.data;
 };

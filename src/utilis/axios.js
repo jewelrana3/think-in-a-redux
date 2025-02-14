@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const videosInstance = axios.create({
+const dataInstance = axios.create({
   baseURL: "http://localhost:9000",
 });
 
-export default videosInstance;
+export default dataInstance;
